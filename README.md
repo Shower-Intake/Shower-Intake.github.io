@@ -1,4 +1,5 @@
 # Shower Intake
+<!-- Deployment trigger -->
 
 A comprehensive React-based web application for managing shower intake, real-time shower tracking, and analytics for homeless shelters and community centers.
 

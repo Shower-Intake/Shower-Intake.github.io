@@ -1,0 +1,686 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+}
+
+/* Full-bleed helper to break out of page padding */
+.full-bleed {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+@media (min-width: 768px) {
+  .full-bleed {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+/* Custom navbar responsive styling */
+.custom-navbar .navbar-brand-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.custom-navbar .navbar-brand-centered {
+  margin: 0;
+}
+
+.custom-navbar #basic-navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-navbar .navbar-nav {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar .navbar-nav.me-auto {
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.custom-navbar .settings-nav {
+  margin-left: auto;
+}
+
+.custom-navbar .navbar-nav:last-child {
+  justify-content: center;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .custom-navbar .navbar-brand-container {
+    order: -1;
+    margin-bottom: 10px;
+  }
+  
+  .custom-navbar #basic-navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .custom-navbar .navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .custom-navbar .navbar-nav .nav-link {
+    margin: 0 10px;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom styles for shower intake */
+.status-showering {
+  background-color: #d4edda !important;
+  border-color: #c3e6cb !important;
+}
+
+.status-queued {
+  background-color: #fff3cd !important;
+  border-color: #ffeaa7 !important;
+}
+
+.status-overflow {
+  background-color: #f8d7da !important;
+  border-color: #f5c6cb !important;
+}
+
+.status-left {
+  background-color: #e2e3e5 !important;
+  border-color: #d6d8db !important;
+}
+
+.status-banned {
+  background-color: #f8d7da !important;
+  border-color: #f5c6cb !important;
+  color: #721c24 !important;
+}
+
+.shower-timer {
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.shower-status-ready {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.shower-status-showering {
+  background-color: #cce5ff;
+  border-color: #b3d7ff;
+}
+
+.shower-status-cleaning {
+  background-color: #fff3cd;
+  border-color: #ffeaa7;
+}
+
+.shower-status-waiting {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.intake-form {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+  .intake-table {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .intake-table th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+  }
+
+  /* Excel-like Table Styling */
+  .excel-table-container {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  padding: 0;
+}
+
+  .table-search-header {
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    margin: 0;
+    min-width: 1200px;
+  }
+
+  .table-search-header .input-group {
+    max-width: 400px;
+    margin: 0;
+  }
+
+  .header-card {
+    border-bottom: 1px solid #888888;
+  }
+
+/* Add Guest header button tweaks */
+.add-guest-header-btn {
+  white-space: nowrap;
+}
+
+  .excel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    border: 1px solid #888888;
+  }
+
+  .table-body-scroll {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
+  }
+
+  .excel-table th {
+    background-color: #f8f9fa;
+    border: 1px solid #cccccc;
+    padding: 8px 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-align: center;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .table-body-scroll .excel-table th {
+    position: sticky;
+    top: 0;
+    z-index: 11;
+  }
+
+  /* Ensure fixed columns work with both horizontal and vertical scrolling */
+  .table-body-scroll .excel-table th.fixed-column {
+    z-index: 13;
+  }
+
+  .table-body-scroll .excel-table td.fixed-column {
+    z-index: 12;
+  }
+
+  .excel-table th:first-child {
+    border-top-left-radius: 0;
+  }
+
+  .excel-table th:last-child {
+    border-top-right-radius: 0;
+  }
+
+  .excel-table td {
+    border: 1px solid #cccccc;
+    padding: 6px 4px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .excel-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+
+  .excel-table tbody tr:hover {
+    background-color: #e9ecef;
+  }
+
+  .excel-table .action-cell {
+    min-width: 120px;
+    width: 120px;
+  }
+
+  .excel-table .status-cell {
+    min-width: 80px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .excel-table .name-cell {
+    min-width: 100px;
+    text-align: left;
+  }
+
+  .excel-table .date-cell {
+    min-width: 90px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .excel-table .race-ethnicity-cell {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .excel-table .checkbox-cell {
+    min-width: 50px;
+  }
+
+  .excel-table .comment-cell {
+    min-width: 60px;
+  }
+
+  /* Consistent row height for readability */
+  .excel-table th,
+  .excel-table td {
+    height: 40px;
+  }
+
+  /* Truncate long names gracefully */
+  .excel-table .name-cell {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .excel-table .time-cell {
+    min-width: 70px;
+  }
+
+  /* Fixed columns styling */
+  .excel-table th.fixed-column,
+  .excel-table td.fixed-column {
+    position: sticky;
+    background: white;
+    z-index: 10;
+  }
+
+  .excel-table th.fixed-column-1,
+  .excel-table td.fixed-column-1 {
+    left: 0;
+    z-index: 12;
+  }
+
+  .excel-table th.fixed-column-2,
+  .excel-table td.fixed-column-2 {
+    left: 50px;
+    z-index: 12;
+  }
+
+  .excel-table th.fixed-column-3,
+  .excel-table td.fixed-column-3 {
+    left: 150px;
+    z-index: 12;
+  }
+
+  .excel-table th.fixed-column-4,
+  .excel-table td.fixed-column-4 {
+    left: 250px;
+    z-index: 12;
+  }
+
+  .excel-table th.fixed-column-5,
+  .excel-table td.fixed-column-5 {
+    left: 370px;
+    z-index: 12;
+  }
+
+  /* Add shadow effect for fixed columns */
+  .excel-table th.fixed-column-4,
+  .excel-table td.fixed-column-4 {
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+
+  .excel-table th.fixed-column-5,
+  .excel-table td.fixed-column-5 {
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+
+  /* Ensure proper background for sticky elements */
+  .excel-table tbody tr:nth-child(even) .fixed-column {
+    background: #f8f9fa;
+  }
+
+  .excel-table tbody tr:hover .fixed-column {
+    background: #e9ecef;
+  }
+
+  /* Remove blue focus styling from form controls */
+  .form-control:focus,
+  .form-select:focus {
+    border-color: #86b7fe !important;
+    box-shadow: none !important;
+  }
+
+  .btn:focus {
+    box-shadow: none !important;
+  }
+
+  /* React Select Custom Styling */
+  .react-select-container {
+    font-size: 0.875rem;
+  }
+
+  .react-select__control {
+    border-radius: 12px !important;
+    border: 1px solid #ced4da !important;
+    box-shadow: none !important;
+    min-height: 38px !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  }
+
+  .react-select__control:hover {
+    border-color: #86b7fe !important;
+  }
+
+  .react-select__control--is-focused {
+    border-color: #86b7fe !important;
+    box-shadow: none !important;
+  }
+
+  .react-select__menu {
+    border-radius: 12px !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid #dee2e6 !important;
+  }
+
+  .react-select__option {
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+  }
+
+  .react-select__option--is-focused {
+    background-color: #e9ecef !important;
+    color: #212529 !important;
+  }
+
+  .react-select__option--is-selected {
+    background-color: #0d6efd !important;
+    color: white !important;
+  }
+
+  .react-select__placeholder {
+    color: #6c757d !important;
+  }
+
+  .react-select__single-value {
+    color: #212529 !important;
+  }
+
+  .react-select__indicator-separator {
+    background-color: #dee2e6 !important;
+  }
+
+  .react-select__clear-indicator,
+  .react-select__dropdown-indicator {
+    color: #6c757d !important;
+  }
+
+  .react-select__clear-indicator:hover,
+  .react-select__dropdown-indicator:hover {
+    color: #212529 !important;
+  }
+
+  /* Ensure dropdowns can overflow outside table */
+  .excel-table-container .react-select__menu {
+    z-index: 9999 !important;
+    position: fixed !important;
+  }
+
+  .excel-table-container .react-select__menu-portal {
+    z-index: 9999 !important;
+  }
+
+.search-container {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.metrics-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-tabs .nav-link {
+  color: #495057;
+  border: none;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  background: none;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: transparent;
+  color: #007bff;
+}
+
+.form-check-input:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.alert-banned {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+  .timer-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  /* Fancy Circle Checkboxes */
+  .fancy-checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+
+  .fancy-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .fancy-checkbox label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+    margin: 0;
+  }
+
+  .fancy-checkbox label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border: 2px solid #dee2e6;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .fancy-checkbox input:checked ~ label:before {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .fancy-checkbox label:after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translateY(-50%) rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .fancy-checkbox input:checked ~ label:after {
+    opacity: 1;
+  }
+
+  .fancy-checkbox:hover label:before {
+    border-color: #007bff;
+  }
+
+  .fancy-checkbox input:focus ~ label:before {
+    box-shadow: none;
+  }
+
+  /* Comment Button Styling */
+  .comment-btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+  }
+
+  .comment-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .comment-btn i {
+    font-size: 1rem;
+  }
+
+  /* Location Edit Button Styling */
+  .location-edit-btn {
+    background: none !important;
+    border: none !important;
+    padding: 4px !important;
+    color: #6c757d !important;
+    transition: all 0.2s ease;
+  }
+
+  .location-edit-btn:hover {
+    background: none !important;
+    border: none !important;
+    color: #212529 !important;
+    transform: scale(1.1);
+  }
+
+  .location-edit-btn:focus {
+    box-shadow: none !important;
+  }
+
+  /* Table Checkbox Styling */
+  .table-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table-checkbox-circle {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #dee2e6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .table-checkbox-circle.checked {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .table-checkbox-circle.unchecked {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
+  .table-checkbox-circle i {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+@media (max-width: 768px) {
+  .intake-table {
+    font-size: 0.875rem;
+  }
+  
+  .shower-timer {
+    margin: 5px;
+    padding: 10px;
+  }
+  
+  .timer-display {
+    font-size: 1.25rem;
+  }
+}
